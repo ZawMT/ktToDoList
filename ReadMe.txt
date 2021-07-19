@@ -6,7 +6,7 @@ but it's 99.9% in accord with the tutorial.
 Source code is saved in the purpose of extending this application (mainly for the learning purpose).
 
 Possible extensions:
-1- Adding a scroll to the list 
+1- Adding a scroll to the list - DONE
 2- Saving the list 
 3- Extending the actions 
 3.1- To be able to delete the item without marking as done
