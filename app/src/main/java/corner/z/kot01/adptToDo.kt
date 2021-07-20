@@ -1,5 +1,6 @@
 package corner.z.kot01
 
+import android.app.AlertDialog
 import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
 import android.view.LayoutInflater
 import android.view.View
@@ -48,9 +49,17 @@ class adptToDo(
         }
     }
 
-    fun addToDo(toDo: ToDo){
-        mlstToDo.add(toDo)
-        notifyItemInserted(mlstToDo.size - 1)
+    fun addToDo(toDo: ToDo) : GeneralReturn {
+        val generalReturn = GeneralReturn(0, "OK")
+        if(isExisting(toDo)) {
+            generalReturn.ReturnCode = -1;
+            generalReturn.ReturnString = "The item is already existing!"
+        } else {
+            mlstToDo.add(toDo)
+            notifyItemInserted(mlstToDo.size - 1)
+        }
+
+        return generalReturn
     }
 
     fun removeDone() {
@@ -59,5 +68,12 @@ class adptToDo(
         }
 
         notifyDataSetChanged()
+    }
+
+    private fun isExisting(toDo: ToDo) : Boolean {
+        if(mlstToDo.any{ obj -> obj.strToDo == toDo.strToDo})
+            return true;
+
+        return false;
     }
 }

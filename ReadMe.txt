@@ -11,5 +11,5 @@ Possible extensions:
 3- Extending the actions 
 3.1- To be able to delete the item without marking as done
 3.2- To extend the item's detail info as well as actions (such as alarming) and editing them according
-3.3- Not to allow the duplicate items
+3.3- Not to allow the duplicate items - DONE
 4. Deploying it in PlayStore

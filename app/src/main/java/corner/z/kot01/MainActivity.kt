@@ -1,5 +1,7 @@
 package corner.z.kot01
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,8 +22,15 @@ class MainActivity : AppCompatActivity() {
             val strToDo = etToDo.text.toString()
             if(strToDo.isNotEmpty()){
                 val tmpToDo = ToDo(strToDo)
-                varToDoAdapter.addToDo(tmpToDo)
-                etToDo.text.clear()
+                val generalReturn = varToDoAdapter.addToDo(tmpToDo)
+                if(generalReturn.ReturnCode >= 0) {
+                    etToDo.text.clear()
+                } else {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Error")
+                    builder.setMessage(generalReturn.ReturnString)
+                    builder.show()
+                }
             }
         }
 
