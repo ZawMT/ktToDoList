@@ -7,7 +7,7 @@ Source code is saved in the purpose of extending this application (mainly for th
 
 Possible extensions:
 1- Adding a scroll to the list - DONE
-2- Saving the list 
+2- Saving the list - THIS IS CONTINUED IN A NEW REPO (https://github.com/ZawMT/kt2DoList.git) - Reason: To leave this repo as a basic Kotlin reference
 3- Extending the actions 
 3.1- To be able to delete the item without marking as done
 3.2- To extend the item's detail info as well as actions (such as alarming) and editing them according
